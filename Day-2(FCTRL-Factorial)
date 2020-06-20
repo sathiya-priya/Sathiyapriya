@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+	long long int t;
+	scanf("%lld",&t);
+	while(t){
+	long long int a,s=0;
+	scanf("%lld",&a);
+	while(a>0){
+	s=s+(a/5);
+	a=a/5;}
+	printf("%lld\n",s);t--;}
+	return 0;
+}
