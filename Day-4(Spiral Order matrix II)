@@ -1,0 +1,17 @@
+public class Solution {
+    public int[][] generateMatrix(int r) {
+        int[][] a=new int[r][r];int p=r*r;
+        int s=1,l=0,k=0,c=r;
+        while(s<=p){
+            for(int i=l;i<c;i++){a[k][i]=s;s++;}k++;
+        for(int i=k;i<r;i++){a[i][c-1]=s;s++;}c--;
+        if(l<c){
+            for(int i=c-1;i>=l;i--){a[r-1][i]=s;s++;}r--;
+        }
+        if(k<r){
+            for(int i=r-1;i>=k;i--){a[i][l]=s;s++;}l++;
+        }}
+            return a;
+        }
+    }
+    
