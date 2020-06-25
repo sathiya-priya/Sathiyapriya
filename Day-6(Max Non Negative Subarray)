@@ -1,0 +1,23 @@
+public class Solution {
+    public ArrayList<Integer> maxset(List<Integer> A) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        ArrayList<Integer> arr2 = new ArrayList<>();
+        long sum = 0,temp = 0;
+        for (int num : A) {
+            if (num >= 0) {
+                temp += num;
+                arr2.add(num);
+            }
+            else {
+                temp = 0;
+                copy.clear();
+            }
+            if (temp > sum || (temp == sum && arr.size() < arr2.size())) {
+                sum = temp;
+                arr.clear();
+                arr.addAll(arr2);
+            }
+        }
+        return arr;
+    }
+}
