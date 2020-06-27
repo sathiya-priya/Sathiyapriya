@@ -1,0 +1,26 @@
+public class Solution {
+    public String solve(String A) {
+    int i = A.length() - 1; 
+    int s, e = i + 1; 
+    String result = ""; 
+    while(i >= 0) 
+    { 
+        if(A.charAt(i) == ' ') 
+        { 
+            s = i + 1; 
+            while(s != e) 
+                result += A.charAt(s++); 
+              
+            result += ' '; 
+              
+            e = i; 
+        } 
+        i--; 
+    } 
+      
+    s = 0; 
+    while(s!= e) 
+        result += A.charAt(s++); 
+    result = result.trim().replaceAll("\\s{2,}", " "); 
+    return result; 
+    }}
