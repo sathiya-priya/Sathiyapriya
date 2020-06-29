@@ -1,0 +1,9 @@
+public class Solution {
+    public int strStr(final String A, final String B) {
+        if((A==null)||(B==null)){return -1;}
+	    if(A.contains(B)){
+	    return A.indexOf(B);}
+	    else{
+	    return -1;}
+    }
+}
