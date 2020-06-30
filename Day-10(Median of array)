@@ -1,0 +1,18 @@
+public class Solution {
+	public double findMedianSortedArrays(final List<Integer> A, final List<Integer> B) {
+	    int l = A.size() + B.size();
+	    if(l % 2 == 1) 
+	    	return fun(A, 0, B, 0, l/2 + 1);
+	    else 
+	    	return (fun(A, 0, B, 0, l/2) + fun(A, 0, B, 0, l/2 + 1)) / 2.0;
+	}
+	
+	public int fun(List<Integer> A, int A1, List<Integer> B, int B1, int k){
+	    if(A1 >= A.size()){return B.get(B1 + k - 1);}
+	    if(B1 >= B.size()){return A.get(A1 + k - 1);}
+	    if(k == 1){return Math.min(A.get(A1), B.get(B1));}
+	    int A2 = A1 + k / 2 - 1 < A.size() ? A.get(A1 + k / 2 - 1) : Integer.MAX_VALUE;
+	    int B2 = B1 + k / 2 - 1 < B.size() ? B.get(B1 + k / 2 - 1) : Integer.MAX_VALUE;
+	    if(A2 < B2){ return fun(A, A1 + k/2, B, B1, k - k / 2);}
+	    else{return fun(A, A1, B, B1 + k/2, k - k / 2);}
+}}
