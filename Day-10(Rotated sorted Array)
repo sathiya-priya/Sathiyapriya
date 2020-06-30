@@ -1,0 +1,6 @@
+public class Solution {
+    public int search(final List<Integer> A, int B) {
+         if(!A.contains(B)){return -1;}
+      else{return (A.indexOf(B));}
+    }
+}
